@@ -6,13 +6,21 @@ import AppHeader from "./components/app-header";
 import SearchPanel from "./components/search-panel";
 
 const App = () => {
-  return (
-      <div>
-          <AppHeader />
-          <SearchPanel />
-          <TodoList />
-      </div>
-  );
+
+    const todoData = [
+        {id: 0, label: 'Drink coffee', important: false},
+        {id: 1, label: 'Create App', important: true},
+        {id: 2, label: 'Have a lunch', important: false},
+        {id: 3, label: 'Go to SF', important: true}
+    ];
+
+    return (
+        <div>
+            <AppHeader/>
+            <SearchPanel/>
+            <TodoList todos={todoData}/>
+        </div>
+    );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
